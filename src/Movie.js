@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
 
-function Movie({ coverImg, title, year, rating, runTime }) {
+function Movie({ id, coverImg, title }) {
+  // 메인화면에서 영화 목록을 보여주는 js
+
   return (
     <>
-      <img src={coverImg}></img> <p />
-      <Link to="/Detail">
+      <Link to={`/detail/${id}`}>
         <h1>{title}</h1> <p />
       </Link>
-      year : {year} <p />
-      rating : {rating} <p />
-      runTime : {runTime} min
+      <img src={coverImg}></img> <p />
       <p />
       <hr />
     </>

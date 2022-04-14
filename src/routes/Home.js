@@ -9,6 +9,7 @@ function Home() {
     );
     const result = await response.json();
     setMovies(result.data.movies);
+    console.log(movies);
   }
   useEffect(() => {
     getMovie();
@@ -18,6 +19,7 @@ function Home() {
       {movies.map((movie) => (
         <Movie
           key={movie.id}
+          id={movie.id}
           coverImg={movie.medium_cover_image}
           title={movie.title}
           year={movie.year}
